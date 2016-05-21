@@ -1,4 +1,4 @@
-atom-workspace.seti-compact {
+atom-workspace.define-compact {
 
   .settings-view .section {
     padding: 20px;
@@ -44,11 +44,11 @@ atom-workspace {
         transition: background 0.3s;
 
         &.selected {
-          background: @seti-primary;
-          color: @seti-primary-text;
+          background: @define-primary;
+          color: @define-primary-text;
           &:hover {
-            background-color: @seti-primary-highlight;
-            color: @seti-primary-text;
+            background-color: @define-primary-highlight;
+            color: @define-primary-text;
           }
         }
 
@@ -67,7 +67,7 @@ atom-workspace {
 
     .native-key-bindings.breadcrumb {
       background: @grey-dark;
-      font-family: @seti-font-family;
+      font-family: @font-family;
       font-size: 30px;
       font-weight: 100;
     }
@@ -93,13 +93,13 @@ atom-workspace {
       padding: 0;
 
       button.btn {
-        background: @seti-primary;
-        color: @seti-primary-text;
+        background: @define-primary;
+        color: @define-primary-text;
         transition: background 0.3s;
 
         &:hover {
-          background-color: @seti-primary-highlight;
-          color: @seti-primary-text;
+          background-color: @define-primary-highlight;
+          color: @define-primary-text;
         }
       }
 
@@ -193,7 +193,7 @@ atom-workspace {
         }
       }
       &-heading {
-        font-family: @seti-font-family;
+        font-family: @font-family;
         font-size: 3.5em;
         font-weight: 100;
         color: @white;
@@ -203,7 +203,7 @@ atom-workspace {
         }
 
         &-count {
-          background: @seti-primary;
+          background: @define-primary;
           color: @white;
           font-size: 0.5em;
         }
@@ -217,7 +217,7 @@ atom-workspace {
         &-description {
           color: @white;
           color: rgba(255,255,255,0.5);
-          font-family: @seti-font-family;
+          font-family: @font-family;
           font-size: 13px;
         }
 
@@ -262,7 +262,7 @@ atom-workspace {
         background: @black-dark;
         border: none;
         .card-name a {
-          color: @seti-primary;
+          color: @define-primary;
         }
       }
 
@@ -286,12 +286,12 @@ atom-workspace {
           line-height: 150%;
         }
         strong {
-          font-family: @seti-font-family;
+          font-family: @font-family;
           font-weight: 500;
         }
         code {
-          color: @seti-primary;
-          background: @seti-primary-text;
+          color: @define-primary;
+          background: @define-primary-text;
           font-size: 12px;
           font-weight: 100;
           margin: 0 2px;
@@ -313,11 +313,11 @@ atom-workspace {
           transition: 0.25s background;
         }
         &:hover::before {
-          color: @seti-primary;
+          color: @define-primary;
         }
       }
       &.settings {
-        // background: @seti-primary-highlight;
+        // background: @define-primary-highlight;
       }
       &.uninstall-button {
         background: @red;
@@ -330,12 +330,12 @@ atom-workspace {
       }
       &.install-button {
         // font-weight: 500;
-        background: @seti-primary;
+        background: @define-primary;
         color: @white;
         transition: background 0.3s;
         &:hover {
-          background-color: darken(@seti-primary, 10%);
-          color: @seti-primary-text;
+          background-color: darken(@define-primary, 10%);
+          color: @define-primary-text;
         }
       }
     }
@@ -345,7 +345,7 @@ atom-workspace {
 
   // INPUTS
   .settings-view input[type="checkbox"]:checked {
-    background-color: @seti-primary;
+    background-color: @define-primary;
   }
 
   .control-label {

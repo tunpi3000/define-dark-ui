@@ -1,6 +1,6 @@
 .deprecation-cop {
   .panel-heading {
-    font-family: @seti-font-family;
+    font-family: @font-family;
     font-size: 30px;
   }
 
@@ -20,17 +20,17 @@
         font-size: 15px;
       }
       .path-match-number {
-        color: @seti-primary;
+        color: @define-primary;
         font-weight: bold;
         letter-spacing: 0.075em;
       }
       &:hover {
-        background: @seti-primary !important;
-        color: @seti-primary-text;
+        background: @define-primary !important;
+        color: @define-primary-text;
 
         + ul.list .padded .btn-group button.btn {
-          background: @seti-primary-highlight;
-          color: @seti-primary-text;
+          background: @define-primary-highlight;
+          color: @define-primary-text;
         }
       }
     }
@@ -73,8 +73,8 @@
           padding: 0;
           float: right;
           .btn {
-            background: @seti-primary;
-            color: @seti-primary-text;
+            background: @define-primary;
+            color: @define-primary-text;
             margin: 0;
           }
         }
@@ -92,8 +92,8 @@
         }
 
         code {
-          color: @seti-primary;
-          background: @seti-primary-text;
+          color: @define-primary;
+          background: @define-primary-text;
           font-size: 12px;
           margin: 0 2px;
         }
@@ -110,7 +110,7 @@
 
         // MATCHED WORD
         .highlight-info {
-          color: @seti-primary;
+          color: @define-primary;
           box-shadow: none;
         }
         .highlight-error {
@@ -127,8 +127,8 @@
         }
 
         &.selected {
-          background: @seti-primary;
-          color: @seti-primary-text;
+          background: @define-primary;
+          color: @define-primary-text;
 
           .highlight-error {
             color: @white;
@@ -142,18 +142,18 @@
           }
 
           .highlight-info {
-            color: @seti-primary-highlight;
+            color: @define-primary-highlight;
           }
 
           .line-number {
-            color: @seti-primary-text;
+            color: @define-primary-text;
           }
           &::before {
             display: none;
           }
         }
         .line-number {
-          color: @seti-primary;
+          color: @define-primary;
         }
       }
     }

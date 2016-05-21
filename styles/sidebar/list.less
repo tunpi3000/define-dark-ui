@@ -1,110 +1,41 @@
+@list-item-height: 23px;
+
 atom-panel-container.left, atom-panel-container.right {
-  // SIDEBAR
-  atom-panel.left {
-    border: none;
-  }
 
-  // FILE LIST CONTAINER
   .entries.list-tree {
+      font-size: 10px;
+      letter-spacing: 0.35px;
 
-    .directory.entry.list-nested-item {
-      &.selected {
-        &::before {
-          background: @tree-view-highlight;
-          margin-top: -5px;
-          height: 35px;
+        .directory.entry.list-nested-item, .file.entry.list-item {
+            color: @tree-view-text-color;
+
+            &.selected {
+                &::before {
+                    background: fade(@tree-view-highlight, 70%);
+                }
+            }
+
+            &.status-added {
+                color: mix(@tree-view-text-color, @text-color-success);
+            }
+
+            &.status-modified {
+                color: mix(@tree-view-text-color, @text-color-warning, 15%);
+            }
+
+            &.status-ignored {
+                color: mix(@tree-view-background-color, @text-color-ignored);
+                height: 0;
+            }
         }
-      }
-    }
-
-    // LIST ITEMS
-    .directory.entry.list-nested-item, .file.entry.list-item {
-      color: @tree-view-text-color;
-      font-weight: 300;
-      letter-spacing: 0.1em;
-      padding-top: 3px;
-      padding-bottom: 3px;
-
-      // SELECTED STATE
-      &.selected {
-        &::before {
-          background: @tree-view-highlight;
-          height: 35px;
+        .directory.entry.list-nested-item,
+        .entry.list-nested-item > .list-item,
+        .file.entry.list-item {
+            line-height: @list-item-height;
+            &.selected:before {
+                height: @list-item-height*1.1;
+                margin-top: -@list-item-height*0.05;
+            }
         }
-      }
-
-      // STATUS COLORS
-      &.status-added {
-        color: @text-color-success;
-      }
-
-      &.status-modified {
-        color: @text-color-warning;
-      }
-
-      &.status-ignored {
-        color: @text-color-ignored;
-        &.seti-hide {
-          display: none;
-        }
-      }
     }
-  }
-
-
-  // - - - - - - - - - - -
-  //  USER MODIFIED STYLES
-  // - - - - - - - - - - -
-
-}
-
-atom-workspace.seti-compact {
-  atom-panel-container {
-    .entries.list-tree .directory.entry.list-nested-item, .entries.list-tree .file.entry.list-item {
-      padding-bottom: 0;
-      padding-top: 0;
-      letter-spacing: 0.05em;
-    }
-
-    .entries.list-tree .file.entry.list-item {
-      &.selected::before {
-        height: 20px;
-        margin-top: 4px;
-      }
-    }
-
-    .entries.list-tree .directory.entry.list-nested-item {
-      &.selected {
-        &::before {
-          height: 25px;
-          margin-top: 0px;
-        }
-      }
-    }
-  }
-}
-
-
-atom-workspace:not(.seti-icons) {
-  atom-panel-container {
-    .entries.list-tree .directory.entry.list-nested-item, .entries.list-tree .file.entry.list-item {
-      padding-bottom: 0;
-      padding-top: 0;
-      letter-spacing: 0.05em;
-    }
-    .entries.list-tree .file.entry.list-item {
-      &.selected::before {
-        height: 22px;
-        margin-top: 2px;
-      }
-    }
-    .entries.list-tree .directory.entry.list-nested-item {
-      &.selected {
-        &::before {
-          height: 22px;
-          margin-top: 2px;
-        }
-      }
-    }
-  }
 }

@@ -1,10 +1,16 @@
+@icon-size: 16px;
+@list-padding: 4px;
+
 atom-panel-container.modal {
 
   atom-panel.modal {
-    background-color: rgba(0,0,0,0.8);
-    border: solid 1px rgba(0,0,0,0.5);
-    color: @white;
-    padding: 10px;
+    background-color: @white;
+    color: @black;
+    padding: 0;
+    border-radius: 2px;
+    box-shadow: 0 0 12px fade(@black, 25%);
+    top: 50vh;
+    transform: translateY(-50%);
 
     .tree-view-dialog {
       label.icon-file-add {
@@ -15,118 +21,75 @@ atom-panel-container.modal {
       }
     }
 
-    // COMMAND PALLETTE
-    .fuzzy-finder .list-group  {
-      .two-lines, .event, .grammar-selector, li {
-        padding: 5px 10px;
-      }
-    }
-
     // MINI EDITOR
     .input(@input-background-color, @input-text-color);
 
-    .atom-text-editor[mini] {
-      margin-bottom: 0;
-    }
-
-    .error-message {
-      padding: 10px;
-    }
+    .atom-text-editor[mini] { margin-bottom: 0; }
+    .error-message { padding: 0.5em 1em; }
 
     .list-group {
       margin: 0;
       .two-lines, .event, .grammar-selector, li {
-        background: @grey-dark;
-        height: 45px;
-        margin-bottom: 1px;
-        padding: 10px;
-        color: @white;
+        position: relative;
+        padding: @list-padding 0;
+        height: auto;
         letter-spacing: 0.06em;
+        transition: background 0.12s;
 
-        .icon-book,
-        .icon-file-binary,
-        .icon-file-pdf,
-        .icon-file-text,
-        .icon-file-media {
+        [class*='icon-'] {
           &::before {
-            font-size: 22px;
-            height: 22px;
-            position: relative;
-            top: 7px;
-            width: 22px;
+            position: absolute;
+            font-size: @icon-size;
+            left: @icon-size/2;
+            width: @icon-size;
+            height: @icon-size; line-height: @icon-size;
+            top: 50%; transform: translateY(-50%);
           }
         }
 
         .character-match {
-          color: #fff;
-          font-weight: 500;
-          padding: 0px 1px;
+          color: darken(desaturate(@bad, 35%), 25%);
+          background: fade(desaturate(@background-color-error, 40%), 25%);
+          border-radius: 2px;
+          font-weight: 400;
+          padding: 0px;
         }
 
-        .status {
-          &::before {
-            top: 6px;
-            left: 6px;
-          }
-          &-modified {
-            color: @warn;
-          }
-          &-added {
-            color: @good;
-          }
-        }
+        .status { display: none; }
 
-        transition: background 0.25s;
+        .primary-line {
+            float: left;
+            padding-left: 2*@icon-size;
+        }
+        .secondary-line {
+          float: right;
+          font-weight: 300;
+          color: @grey-light;
+        }
 
         &.selected {
-          background: @black;
-          color: @seti-primary;
+          background: fade(@primary-highlight, 50%);
+          color: lighten(@primary, 25%);
           &::before {
             display: none;
           }
           .status {
             &-modified, &-added {
-              color: @seti-primary;
+              color: @define-primary;
             }
           }
           .primary-line {
-            color: @seti-primary;
-            &.icon-book,
-            &.icon-file-binary,
-            &.icon-file-pdf,
-            &.icon-file-text,
-            &.icon-file-media {
-              &::before {
-                color: @seti-primary;
-              }
-            }
+              &::before { position: absolute; }
           }
           .secondary-line {
-            color: @seti-primary;
           }
         }
-
-        .status {
-          display: inline-block;
-          float: left;
+        &::after {
+            content: "";
+            clear: both;
+            display: block;
         }
-        .primary-line {
-          float: left;
-          display: inline-block;
-        }
-        .secondary-line {
-          display: inline-block;
-          float: right;
-          padding-top: 5px;
-          font-weight: 300;
-          color: @grey-light;
-        }
-        clear: both;
       }
-    }
-
-    .select-list {
-      background-color: @black;
     }
   }
 }

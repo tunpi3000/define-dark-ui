@@ -3,7 +3,6 @@
   "theme": "ui",
   "version": "0.1.1",
   "description": "A dark colored UI theme for Atom.",
-  "main": "lib/main",
   "license": "MIT",
   "repository": "https://github.com/tunpi3000/define-dark-ui",
   "engines": {

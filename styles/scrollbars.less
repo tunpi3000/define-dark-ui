@@ -1,12 +1,12 @@
 .scrollbars-visible-always {
   /deep/ ::-webkit-scrollbar {
-    width: 5px;
-    height: 5px;
+    width: 6px;
+    height: 6px;
   }
 
   /deep/ ::-webkit-scrollbar-thumb {
-    background: @seti-primary;
-    border-radius: 5px;
+    background: desaturate(@primary-highlight, 25%);
+    border-radius: 6px;
     box-shadow: none;
   }
 }
